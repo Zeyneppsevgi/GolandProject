@@ -1,17 +1,24 @@
 package infrastructure
 
 import (
-	"github.com/stretchr/testify/assert"
+	"github.com/jackc/pgx/v4/pgxpool"
+	"product-app/common/postgresql"
+	"product-app/persistence"
 	"testing"
 )
 
-func TestAdd(t *testing.T) {
-	t.Run("TestAdd", func(t *testing.T) {
-		actual := Add(10, 20)
-		assert.Equal(t, 30, actual)
-	})
-}
+var productRepository persistence.IProductRepository
+var dbPool *pgxpool.Pool
 
-func Add(x int, y int) int {
-	return x + y
+func TestMain(m *testing.M) {
+	ctx := context.Background()
+	dbPool = postgresql.GetConnectionPool(ctx, postgresql.Config{
+		Host:                  "localhost",
+		Port:                  "6432",
+		DbName:                "productapp",
+		UserName:              "postgres",
+		Password:              "postgres",
+		MaxConnections:        "10",
+		MaxConnectionIdleTime: "30s",
+	})
 }

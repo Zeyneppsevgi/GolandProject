@@ -14,6 +14,12 @@ type ProductRepository struct {
 	dbPool *pgxpool.Pool
 }
 
+func NewProductRepository(dbPool *pgxpool.Pool) IProductRepository {
+	return &ProductRepository{
+		dbPool: dbPool,
+	}
+}
+
 func (productRepository *ProductRepository) GetAllProducts() []domain.Product {
 	ctx := context.Background()
 	productRows, err := productRepository.dbPool.Query(ctx, "Select * from products")
