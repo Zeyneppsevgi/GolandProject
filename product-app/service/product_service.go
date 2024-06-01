@@ -44,5 +44,5 @@ func (productService *ProductService) GetAllProducts() []domain.Product {
 }
 
 func (productService *ProductService) GetAllProductsByStore(storeName string) []domain.Product {
-	
+
 }
