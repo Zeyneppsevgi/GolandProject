@@ -20,12 +20,12 @@ type ProductService struct {
 
 func NewProductService(productRepository persistence.IProductRepository) IProductService {
 	return &ProductRepository{
-		dbPool: dbPool,
+		productRepository: productRepository,
 	}
 }
 
 func (productService *ProductService) Add(productCreate model.ProductCreate) error {
-
+	validateProductCreate(productCreate)
 }
 
 func (productService *ProductService) DeleteById(productId int64) error {
