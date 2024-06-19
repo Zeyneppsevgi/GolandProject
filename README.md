@@ -1,7 +1,7 @@
 # GolangProject
 This project is a simple web application written in Go (Golang) language. The project has been containerized using Docker and PostgreSQL database support has been added.
 
-#Running the Application
+# Running the Application
 
 Navigate to the project directory via Terminal.
 
