@@ -1,1 +1,1 @@
-# GolandProject
+# GolangProject
