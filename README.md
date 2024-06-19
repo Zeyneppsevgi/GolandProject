@@ -1,13 +1,13 @@
 # GolangProject
-Bu proje, Go (Golang) dili ile yazılmış basit bir web uygulamasıdır.Proje Docker kullanılarak konteynerize edilmiş ve PostgreSQL veritabanı desteği eklenmiştir.
+This project is a simple web application written in Go (Golang) language. The project has been containerized using Docker and PostgreSQL database support has been added.
 
-#Uygulamanın Çalıştırılması
+#Running the Application
 
-Terminal üzerinden proje dizinine gidin.
+Navigate to the project directory via Terminal.
 
-Aşağıdaki komutları çalıştırarak Docker imajını oluşturun ve uygulamayı başlatın:
+Run the following commands to create the Docker image and launch the application:
 
 
 docker-compose up --build
 
-Uygulama, http://localhost:8080 adresinde çalışacaktır.
+The application will run on http://localhost:8080.
