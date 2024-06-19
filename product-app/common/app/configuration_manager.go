@@ -12,6 +12,7 @@ func NewConfigurationManager() *ConfigurationManager {
 		PostgreSqlConfig: postgreSqlConfig,
 	}
 }
+
 func getPostgreSqlConfig() postgresql.Config {
 	return postgresql.Config{
 		Host:                  "localhost",
